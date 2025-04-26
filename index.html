@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>BrokeFriendAI</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrokeFriend Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>BrokeFriend Finder</h1>
+            <p>Discover which friends are helping or hurting your financial future</p>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-step active">1</div>
+            <div class="progress-line"></div>
+            <div class="progress-step">2</div>
+            <div class="progress-line"></div>
+            <div class="progress-step">3</div>
+            <div class="progress-line"></div>
+            <div class="progress-step">4</div>
+        </div>
+        
+        <!-- Step 1: Enter Contacts -->
+        <div class="step active" id="step1">
+            <h2>Step 1: Enter Your Top 5 Closest Friends</h2>
+            <p>Think about the 5 people you spend the most time with or who influence your decisions the most.</p>
+            
+            <div id="contacts-container">
+                <div class="person-form">
+                    <div class="question">
+                        <label for="name1">Friend 1 Name or Initials:</label>
+                        <input type="text" id="name1" placeholder="Enter name or initials">
+                    </div>
+                    <div class="question">
+                        <label for="relationship1">Relationship Type:</label>
+                        <select id="relationship1">
+                            <option value="">Select relationship type</option>
+                            <option value="Family">Family Member</option>
+                            <option value="Friend">Close Friend</option>
+                            <option value="Colleague">Work Colleague</option>
+                            <option value="Partner">Romantic Partner</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="person-form">
+                    <div class="question">
+                        <label for="name2">Friend 2 Name or Initials:</label>
+                        <input type="text" id="name2" placeholder="Enter name or initials">
+                    </div>
+                    <div class="question">
+                        <label for="relationship2">Relationship Type:</label>
+                        <select id="relationship2">
+                            <option value="">Select relationship type</option>
+                            <option value="Family">Family Member</option>
+                            <option value="Friend">Close Friend</option>
+                            <option value="Colleague">Work Colleague</option>
+                            <option value="Partner">Romantic Partner</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="person-form">
+                    <div class="question">
+                        <label for="name3">Friend 3 Name or Initials:</label>
+                        <input type="text" id="name3" placeholder="Enter name or initials">
+                    </div>
+                    <div class="question">
+                        <label for="relationship3">Relationship Type:</label>
+                        <select id="relationship3">
+                            <option value="">Select relationship type</option>
+                            <option value="Family">Family Member</option>
+                            <option value="Friend">Close Friend</option>
+                            <option value="Colleague">Work Colleague</option>
+                            <option value="Partner">Romantic Partner</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="person-form">
+                    <div class="question">
+                        <label for="name4">Friend 4 Name or Initials:</label>
+                        <input type="text" id="name4" placeholder="Enter name or initials">
+                    </div>
+                    <div class="question">
+                        <label for="relationship4">Relationship Type:</label>
+                        <select id="relationship4">
+                            <option value="">Select relationship type</option>
+                            <option value="Family">Family Member</option>
+                            <option value="Friend">Close Friend</option>
+                            <option value="Colleague">Work Colleague</option>
+                            <option value="Partner">Romantic Partner</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="person-form">
+                    <div class="question">
+                        <label for="name5">Friend 5 Name or Initials:</label>
+                        <input type="text" id="name5" placeholder="Enter name or initials">
+                    </div>
+                    <div class="question">
+                        <label for="relationship5">Relationship Type:</label>
+                        <select id="relationship5">
+                            <option value="">Select relationship type</option>
+                            <option value="Family">Family Member</option>
+                            <option value="Friend">Close Friend</option>
+                            <option value="Colleague">Work Colleague</option>
+                            <option value="Partner">Romantic Partner</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <button onclick="goToStep(2)">Continue to Wealth Impact Questions</button>
+        </div>
+        
+        <!-- Step 2: Wealth Impact Questions -->
+        <div class="step" id="step2">
+            <h2>Step 2: Assess Your Friends' Impact on Your Wealth</h2>
+            <p>Answer these questions for each friend to determine their influence on your financial future.</p>
+            
+            <div id="questions-container">
+                <!-- Dynamic content will be filled here -->
+            </div>
+            
+            <button onclick="goToStep(3)">Analyze My Friends</button>
+        </div>
+        
+        <!-- Step 3: Scanning Animation -->
+        <div class="step" id="step3">
+            <div class="scanning-animation">
+                <div class="pulse"></div>
+                <div class="scanning-text">
+                    <p>Scanning your friendship patterns...</p>
+                    <p id="scanning-status">Analyzing financial influence...</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 4: Results -->
+        <div class="step" id="step4">
+            <h2>Your BrokeFriend Scan Results</h2>
+            <p>Here's how your closest friends are impacting your financial future:</p>
+            
+            <div class="prosperity-leakage" id="prosperity-leakage">
+                <!-- Prosperity leakage summary will go here -->
+            </div>
+            
+            <div class="pattern-box" id="pattern-detection">
+                <!-- Pattern detection will go here -->
+            </div>
+            
+            <!-- Before/After Network Visualization -->
+            <div class="network-visualization">
+                <div class="network-title">Your Current Wealth Network</div>
+                <div class="network-container" id="current-network">
+                    <div class="network-you">YOU</div>
+                    <!-- Network contacts will be added here -->
+                </div>
+            </div>
+            
+            <div class="network-visualization">
+                <div class="network-title">Your Optimized Wealth Network (After Implementing Plan)</div>
+                <div class="network-container" id="optimized-network">
+                    <div class="network-you">YOU</div>
+                    <!-- Network contacts will be added here -->
+                </div>
+            </div>
+            
+            <div class="results" id="results-container">
+                <!-- Results will be filled here -->
+            </div>
+            
+            <h3>Your Personalized Wealth Action Plan</h3>
+            <p>Follow these steps to optimize your friendship network for maximum prosperity:</p>
+            
+            <div id="action-plan-container">
+                <!-- Action plan will be filled here -->
+            </div>
+            
+            <div class="feedback-reaction">
+                <p>How do you feel about your results?</p>
+                <div>
+                    <span class="feedback-icon" onclick="recordFeedback('shocked')">😲</span>
+                    <span class="feedback-icon" onclick="recordFeedback('sad')">😢</span>
+                    <span class="feedback-icon" onclick="recordFeedback('happy')">😊</span>
+                    <span class="feedback-icon" onclick="recordFeedback('determined')">😤</span>
+                </div>
+            </div>
+            
+            <button onclick="resetScanner()">Scan Different Friends</button>
+        </div>
+    </div>
+    
+    <!-- Warning Popup -->
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="popup-warning" id="warning-popup">
+        <h3>URGENT WEALTH WARNING</h3>
+        <p id="warning-text"></p>
+        <button class="popup-button" onclick="closeWarning()">I Understand</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
